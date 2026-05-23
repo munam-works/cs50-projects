@@ -4,3 +4,326 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Amazon</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+ 
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f3f3f3;
+        color: #111;
+      }
+ 
+      /* ══════════════════════════════
+         NAVBAR
+      ══════════════════════════════ */
+      nav {
+        background-color: #131921;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        flex-wrap: wrap;
+      }
+ 
+      .nav-logo {
+        color: #fff;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border: 2px solid transparent;
+        padding: 4px 8px;
+        text-decoration: none;
+      }
+ 
+      .nav-logo:hover {
+        border-color: #fff;
+      }
+ 
+      .nav-logo span {
+        color: #ff9900;
+      }
+ 
+      .nav-deliver {
+        color: #ccc;
+        font-size: 0.75rem;
+        line-height: 1.4;
+      }
+ 
+      .nav-deliver strong {
+        color: #fff;
+        font-size: 0.9rem;
+        display: block;
+      }
+ 
+      .nav-search {
+        display: flex;
+        flex: 1;
+        min-width: 200px;
+      }
+ 
+      .nav-search select {
+        background-color: #e8e8e8;
+        border: none;
+        padding: 0 8px;
+        font-size: 0.75rem;
+        border-radius: 4px 0 0 4px;
+        cursor: pointer;
+      }
+ 
+      .nav-search input {
+        flex: 1;
+        padding: 8px 12px;
+        border: none;
+        font-size: 0.95rem;
+        outline: none;
+      }
+ 
+      .nav-search button {
+        background-color: #ff9900;
+        border: none;
+        padding: 0 14px;
+        cursor: pointer;
+        border-radius: 0 4px 4px 0;
+        font-size: 1.1rem;
+      }
+ 
+      .nav-search button:hover {
+        background-color: #e68a00;
+      }
+ 
+      .nav-link {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        border: 2px solid transparent;
+        padding: 4px 8px;
+        line-height: 1.4;
+      }
+ 
+      .nav-link:hover {
+        border-color: #fff;
+      }
+ 
+      .nav-link small {
+        color: #ccc;
+        font-size: 0.72rem;
+        display: block;
+      }
+ 
+      .nav-link strong {
+        display: block;
+      }
+ 
+      .nav-cart {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        border: 2px solid transparent;
+        padding: 4px 8px;
+      }
+ 
+      .nav-cart:hover {
+        border-color: #fff;
+      }
+ 
+      .nav-cart .cart-count {
+        color: #ff9900;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+ 
+      /* ══════════════════════════════
+         SUB NAV
+      ══════════════════════════════ */
+      .subnav {
+        background-color: #232f3e;
+        display: flex;
+        gap: 4px;
+        padding: 8px 16px;
+        flex-wrap: wrap;
+      }
+ 
+      .subnav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 4px 10px;
+        border: 2px solid transparent;
+        white-space: nowrap;
+      }
+ 
+      .subnav a:hover {
+        border-color: #fff;
+      }
+ 
+      /* ══════════════════════════════
+         HERO BANNER
+      ══════════════════════════════ */
+      .hero {
+        background: linear-gradient(to bottom, #cee4f0, #f3f3f3);
+        text-align: center;
+        padding: 48px 20px 32px;
+      }
+ 
+      .hero h1 {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+        color: #111;
+      }
+ 
+      .hero p {
+        color: #555;
+        margin-bottom: 20px;
+        font-size: 1rem;
+      }
+ 
+      .hero a {
+        display: inline-block;
+        background-color: #ff9900;
+        color: #111;
+        padding: 10px 28px;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 4px;
+        font-size: 0.95rem;
+      }
+ 
+      .hero a:hover {
+        background-color: #e68a00;
+      }
+ 
+      /* ══════════════════════════════
+         PRODUCTS
+      ══════════════════════════════ */
+      .products-section {
+        max-width: 1200px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+ 
+      .products-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        color: #111;
+      }
+ 
+      .products-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+      }
+ 
+      .product-card {
+        background-color: #fff;
+        flex: 1 1 200px;
+        max-width: 220px;
+        padding: 16px;
+        border: 1px solid #ddd;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+ 
+      .product-card img {
+        width: 100%;
+        height: 160px;
+        object-fit: contain;
+        background-color: #f9f9f9;
+      }
+ 
+      .product-card h3 {
+        font-size: 0.9rem;
+        color: #111;
+        line-height: 1.4;
+      }
+ 
+      .product-card .price {
+        color: #B12704;
+        font-size: 1rem;
+        font-weight: bold;
+      }
+ 
+      .product-card .rating {
+        color: #ff9900;
+        font-size: 0.85rem;
+      }
+ 
+      .product-card .add-btn {
+        margin-top: auto;
+        background-color: #ff9900;
+        border: none;
+        padding: 8px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        border-radius: 4px;
+        font-weight: bold;
+      }
+ 
+      .product-card .add-btn:hover {
+        background-color: #e68a00;
+      }
+ 
+      /* ══════════════════════════════
+         FOOTER
+      ══════════════════════════════ */
+      footer {
+        background-color: #131921;
+        color: #ddd;
+        text-align: center;
+        padding: 32px 16px;
+        margin-top: 40px;
+        font-size: 0.85rem;
+      }
+ 
+      footer a {
+        color: #ddd;
+        text-decoration: none;
+        margin: 0 10px;
+      }
+ 
+      footer a:hover {
+        text-decoration: underline;
+      }
+ 
+      footer .footer-logo {
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: bold;
+        display: block;
+        margin-bottom: 16px;
+      }
+ 
+      footer .footer-logo span {
+        color: #ff9900;
+      }
+ 
+      footer p {
+        margin-top: 16px;
+        color: #888;
+        font-size: 0.78rem;
+      }
+ 
+      /* ══════════════════════════════
+         RESPONSIVE
+      ══════════════════════════════ */
+      @media (max-width: 600px) {
+        .nav-deliver {
+          display: none;
+        }
+ 
+        .product-card {
+          max-width: 100%;
+        }
+ 
+        .hero h1 {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
