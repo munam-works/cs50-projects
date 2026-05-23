@@ -97,6 +97,293 @@
       }
  
       /* ── DIVIDER ── */
-     `  
+      hr {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 0 60px;
+      }
+ 
+      /* ── MAIN ── */
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 60px 60px;
+      }
+ 
+      section {
+        margin-bottom: 70px;
+      }
+ 
+      section h2 {
+        font-size: 0.8rem;
+        font-family: Arial, sans-serif;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: #aaa;
+        margin-bottom: 28px;
+      }
+ 
+      /* ── ABOUT ── */
+      .about p {
+        font-size: 1.05rem;
+        color: #444;
+        max-width: 620px;
+      }
+ 
+      /* ── SKILLS ── */
+      .skills ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+ 
+      .skills ul li {
+        border: 1px solid #ddd;
+        padding: 7px 16px;
+        font-family: Arial, sans-serif;
+        font-size: 0.85rem;
+        color: #444;
+      }
+ 
+      /* ── PROJECTS ── */
+      .projects-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+ 
+      .card {
+        flex: 1 1 240px;
+        border: 1px solid #e0e0e0;
+        padding: 28px;
+      }
+ 
+      .card h3 {
+        font-size: 1rem;
+        font-weight: normal;
+        margin-bottom: 10px;
+        color: #111;
+      }
+ 
+      .card p {
+        font-family: Arial, sans-serif;
+        font-size: 0.88rem;
+        color: #666;
+        margin-bottom: 16px;
+      }
+ 
+      .card a {
+        font-family: Arial, sans-serif;
+        font-size: 0.82rem;
+        color: #222;
+        text-decoration: underline;
+      }
+ 
+      .card a:hover {
+        color: #000;
+      }
+ 
+      /* ── CONTACT FORM ── */
+      .contact form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        max-width: 480px;
+      }
+ 
+      .contact label {
+        font-family: Arial, sans-serif;
+        font-size: 0.8rem;
+        color: #888;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 6px;
+      }
+ 
+      .contact input,
+      .contact textarea {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 8px 0;
+        font-family: Georgia, serif;
+        font-size: 0.95rem;
+        color: #222;
+        outline: none;
+        background: transparent;
+      }
+ 
+      .contact input:focus,
+      .contact textarea:focus {
+        border-bottom-color: #222;
+      }
+ 
+      .contact textarea {
+        height: 100px;
+        resize: vertical;
+      }
+ 
+      .contact button {
+        align-self: flex-start;
+        padding: 11px 28px;
+        border: 1px solid #222;
+        background: transparent;
+        font-family: Arial, sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+        color: #222;
+      }
+ 
+      .contact button:hover {
+        background-color: #222;
+        color: #fff;
+      }
+ 
+      /* ── FOOTER ── */
+      footer {
+        border-top: 1px solid #e0e0e0;
+        padding: 28px 60px;
+        font-family: Arial, sans-serif;
+        font-size: 0.8rem;
+        color: #aaa;
+      }
+ 
+      /* ── RESPONSIVE ── */
+      @media (max-width: 600px) {
+        header {
+          flex-direction: column;
+          gap: 16px;
+          padding: 20px 24px;
+          text-align: center;
+        }
+ 
+        nav {
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 18px;
+        }
+ 
+        .hero {
+          padding: 60px 24px;
+        }
+ 
+        .hero h2 {
+          font-size: 2rem;
+        }
+ 
+        main {
+          padding: 40px 24px;
+        }
+ 
+        hr {
+          margin: 0 24px;
+        }
+ 
+        footer {
+          padding: 24px;
+        }
+ 
+        .projects-grid {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+ 
+    <header>
+      <h1>Bruce Wayne</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+ 
+    <div class="hero">
+      <p class="hello">Hi there, I'm</p>
+      <h2>Bruce Wayne</h2>
+      <p class="bio">
+        CEO of Wayne Enterprises. I build clean, accessible, and responsive websites.
+        I care about good design and writing code that actually makes sense.
+      </p>
+      <a href="#projects" class="btn">See my work</a>
+    </div>
+ 
+    <hr />
+ 
+    <main>
+ 
+      <section id="about" class="about">
+        <h2>About</h2>
+        <p>
+          Based in Gotham City. I studied computer science and have been building
+          for the web ever since. Outside of work I enjoy long drives, reading,
+          and the occasional rooftop visit at 2am.
+        </p>
+      </section>
+ 
+      <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Responsive Design</li>
+          <li>JavaScript</li>
+          <li>Git & GitHub</li>
+          <li>Problem Solving</li>
+        </ul>
+      </section>
+ 
+      <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+          <div class="card">
+            <h3>Portfolio Website</h3>
+            <p>A clean personal portfolio built with HTML and CSS. Fully responsive.</p>
+            <a href="#">View →</a>
+          </div>
+          <div class="card">
+            <h3>Gotham City Blog</h3>
+            <p>A simple blog layout using semantic HTML and CSS flexbox.</p>
+            <a href="#">View →</a>
+          </div>
+          <div class="card">
+            <h3>Wayne Enterprises Page</h3>
+            <p>A company landing page with a contact form and navigation.</p>
+            <a href="#">View →</a>
+          </div>
+        </div>
+      </section>
+ 
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" />
+          </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="What's on your mind?"></textarea>
+          </div>
+          <button type="submit">Send</button>
+        </form>
+      </section>
+ 
+    </main>
+ 
+    <footer>
+      <p>© 2024 Bruce Wayne</p>
+    </footer>
+ 
   </body>
 </html>
